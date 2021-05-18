@@ -1,0 +1,675 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Archivar" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="561,515" sap2010:WorkflowViewState.IdRef="Archivar_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices.RuntimeInformation</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Archive" sap:VirtualizedContainerService.HintSize="242,431" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:Boolean" Default="False" Name="EndedImage" />
+      <Variable x:TypeArguments="x:String" Name="readystate" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:OpenBrowser CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Open Login Holded" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="OpenBrowser_2" Url="https://app.holded.com/login">
+      <ui:OpenBrowser.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="242,325" sap2010:WorkflowViewState.IdRef="Sequence_9">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:GetAttribute ContinueOnError="{x:Null}" Result="{x:Null}" Attribute="readystate" DisplayName="Wait Browser" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="GetAttribute_3">
+              <ui:GetAttribute.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="2f04aaa8-4184-48dc-bcb9-a49b530d1ffe" TimeoutMS="[WaitForReady.COMPLETE]" WaitForReady="COMPLETE" />
+              </ui:GetAttribute.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:GetAttribute>
+            <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Show Indications" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[&quot;IMPORTANTE - Por favor, inicie sesión eh Holded con una cuenta con permisos de 'Archivado''. Tras ello seleccione la organización que necesite y dele a 'Aceptar' en este mensaje.&quot;]">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:MessageBox>
+            <ui:GetAttribute ContinueOnError="{x:Null}" Result="{x:Null}" Attribute="readystate" DisplayName="Wait Browser" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="GetAttribute_4">
+              <ui:GetAttribute.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="2f04aaa8-4184-48dc-bcb9-a49b530d1ffe" TimeoutMS="[WaitForReady.COMPLETE]" WaitForReady="COMPLETE" />
+              </ui:GetAttribute.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:GetAttribute>
+          </Sequence>
+        </ActivityAction>
+      </ui:OpenBrowser.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:OpenBrowser>
+    <ui:OpenBrowser CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Holded Tasks &quot;ENDED&quot;" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" Url="https://app.holded.com/projects/cards?filter=active-1,status-rejected">
+      <ui:OpenBrowser.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Secuencia" sap:VirtualizedContainerService.HintSize="376,1310" sap2010:WorkflowViewState.IdRef="Sequence_8">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:GetAttribute ContinueOnError="{x:Null}" Result="{x:Null}" Attribute="readystate" DisplayName="Wait Browser" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="GetAttribute_1">
+              <ui:GetAttribute.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="2f04aaa8-4184-48dc-bcb9-a49b530d1ffe" TimeoutMS="[WaitForReady.COMPLETE]" WaitForReady="COMPLETE" />
+              </ui:GetAttribute.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:GetAttribute>
+            <ui:InterruptibleDoWhile Condition="[EndedImage = False]" DisplayName="Repeat until end" sap:VirtualizedContainerService.HintSize="334,1036" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_4">
+              <ui:InterruptibleDoWhile.Body>
+                <Sequence DisplayName="Cuerpo" sap:VirtualizedContainerService.HintSize="242,871" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:GetAttribute ContinueOnError="{x:Null}" Result="{x:Null}" Attribute="readystate" DisplayName="Wait Browser" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="GetAttribute_6">
+                    <ui:GetAttribute.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="2f04aaa8-4184-48dc-bcb9-a49b530d1ffe" TimeoutMS="[WaitForReady.COMPLETE]" WaitForReady="COMPLETE" />
+                    </ui:GetAttribute.Target>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:GetAttribute>
+                  <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" CursorMotionType="Instant" DisplayName="Click &quot;Select All&quot;" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="Click_12" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
+                    <ui:Click.CursorPosition>
+                      <ui:CursorPosition Position="Center">
+                        <ui:CursorPosition.OffsetX>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:CursorPosition.OffsetX>
+                        <ui:CursorPosition.OffsetY>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:CursorPosition.OffsetY>
+                      </ui:CursorPosition>
+                    </ui:Click.CursorPosition>
+                    <ui:Click.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="a96d68be-7045-435f-916d-f644a51d5b87" InformativeScreenshot="686b077f35cbd1f1f7c00a528a607b5b" Selector="&lt;webctrl tag='INPUT' type='checkbox' /&gt;" WaitForReady="COMPLETE">
+                        <ui:Target.TimeoutMS>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:Target.TimeoutMS>
+                      </ui:Target>
+                    </ui:Click.Target>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:Click>
+                  <ui:GetAttribute ContinueOnError="{x:Null}" Result="{x:Null}" Attribute="readystate" DisplayName="Wait Browser" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="GetAttribute_7">
+                    <ui:GetAttribute.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="2f04aaa8-4184-48dc-bcb9-a49b530d1ffe" TimeoutMS="[WaitForReady.COMPLETE]" WaitForReady="COMPLETE" />
+                    </ui:GetAttribute.Target>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:GetAttribute>
+                  <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" CursorMotionType="Instant" DisplayName="Click &quot;Archive&quot;" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="Click_13" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
+                    <ui:Click.CursorPosition>
+                      <ui:CursorPosition Position="Center">
+                        <ui:CursorPosition.OffsetX>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:CursorPosition.OffsetX>
+                        <ui:CursorPosition.OffsetY>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:CursorPosition.OffsetY>
+                      </ui:CursorPosition>
+                    </ui:Click.CursorPosition>
+                    <ui:Click.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="a41f0f07-40f5-4138-b4c5-645cab608dd1" InformativeScreenshot="3e65fb1fbceb0a03a83d5d2c5b16a275" Selector="&lt;webctrl aaname='Archivar' parentid='bulkactions-container' tag='A' /&gt;" WaitForReady="COMPLETE">
+                        <ui:Target.TimeoutMS>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:Target.TimeoutMS>
+                      </ui:Target>
+                    </ui:Click.Target>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:Click>
+                  <ui:GetAttribute ContinueOnError="{x:Null}" Attribute="readystate" DisplayName="Wait Browser" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="GetAttribute_5">
+                    <ui:GetAttribute.Result>
+                      <OutArgument x:TypeArguments="x:String">[readystate]</OutArgument>
+                    </ui:GetAttribute.Result>
+                    <ui:GetAttribute.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="2f04aaa8-4184-48dc-bcb9-a49b530d1ffe" TimeoutMS="[WaitForReady.COMPLETE]" WaitForReady="COMPLETE" />
+                    </ui:GetAttribute.Target>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:GetAttribute>
+                  <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" CursorMotionType="Instant" DisplayName="Click &quot;Confirm&quot;" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="Click_14" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
+                    <ui:Click.CursorPosition>
+                      <ui:CursorPosition Position="Center">
+                        <ui:CursorPosition.OffsetX>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:CursorPosition.OffsetX>
+                        <ui:CursorPosition.OffsetY>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:CursorPosition.OffsetY>
+                      </ui:CursorPosition>
+                    </ui:Click.CursorPosition>
+                    <ui:Click.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="088c5a71-a651-4a0f-b3b7-9712edbbcb39" InformativeScreenshot="3a68b677c61af245f02db1d122dda855" Selector="&lt;webctrl aaname='Confirmar' tag='BUTTON' type='button' /&gt;" WaitForReady="COMPLETE">
+                        <ui:Target.TimeoutMS>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:Target.TimeoutMS>
+                      </ui:Target>
+                    </ui:Click.Target>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:Click>
+                  <ui:GetAttribute ContinueOnError="{x:Null}" Attribute="readystate" DisplayName="Wait Browser" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="GetAttribute_2">
+                    <ui:GetAttribute.Result>
+                      <OutArgument x:TypeArguments="x:String">[readystate]</OutArgument>
+                    </ui:GetAttribute.Result>
+                    <ui:GetAttribute.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="2f04aaa8-4184-48dc-bcb9-a49b530d1ffe" TimeoutMS="[WaitForReady.COMPLETE]" WaitForReady="COMPLETE" />
+                    </ui:GetAttribute.Target>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:GetAttribute>
+                  <ui:ImageFound DisplayName="Locate ended Image for close" Found="[EndedImage]" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="ImageFound_5">
+                    <ui:ImageFound.Image>
+                      <ui:ImageTarget Image="{x:Null}" Accuracy="0.8" Profile="Basic" TargetImageBase64="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" />
+                    </ui:ImageFound.Image>
+                    <ui:ImageFound.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="0ca765e4-056c-48a0-b363-6aab5c74e4ff" WaitForReady="COMPLETE">
+                        <ui:Target.TimeoutMS>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:Target.TimeoutMS>
+                      </ui:Target>
+                    </ui:ImageFound.Target>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:ImageFound>
+                  <ui:GetAttribute ContinueOnError="{x:Null}" Result="{x:Null}" Attribute="readystate" DisplayName="Wait Browser" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="GetAttribute_8">
+                    <ui:GetAttribute.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="2f04aaa8-4184-48dc-bcb9-a49b530d1ffe" TimeoutMS="[WaitForReady.COMPLETE]" WaitForReady="COMPLETE" />
+                    </ui:GetAttribute.Target>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:GetAttribute>
+                </Sequence>
+              </ui:InterruptibleDoWhile.Body>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:InterruptibleDoWhile>
+            <ui:GetAttribute ContinueOnError="{x:Null}" Result="{x:Null}" Attribute="readystate" DisplayName="Wait Browser" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="GetAttribute_15">
+              <ui:GetAttribute.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="2f04aaa8-4184-48dc-bcb9-a49b530d1ffe" TimeoutMS="[WaitForReady.COMPLETE]" WaitForReady="COMPLETE" />
+              </ui:GetAttribute.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:GetAttribute>
+          </Sequence>
+        </ActivityAction>
+      </ui:OpenBrowser.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:OpenBrowser>
+    <ui:OpenBrowser CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Holded Tasks &quot;REJECTEDS&quot;" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="OpenBrowser_3" Url="https://app.holded.com/projects/cards?filter=active-1,status-done">
+      <ui:OpenBrowser.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Secuencia" sap:VirtualizedContainerService.HintSize="376,1310" sap2010:WorkflowViewState.IdRef="Sequence_11">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:GetAttribute ContinueOnError="{x:Null}" Result="{x:Null}" Attribute="readystate" DisplayName="Wait Browser" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="GetAttribute_9">
+              <ui:GetAttribute.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="2f04aaa8-4184-48dc-bcb9-a49b530d1ffe" TimeoutMS="[WaitForReady.COMPLETE]" WaitForReady="COMPLETE" />
+              </ui:GetAttribute.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:GetAttribute>
+            <ui:InterruptibleDoWhile Condition="[EndedImage = False]" DisplayName="Repeat until end" sap:VirtualizedContainerService.HintSize="334,1036" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_5">
+              <ui:InterruptibleDoWhile.Body>
+                <Sequence DisplayName="Cuerpo" sap:VirtualizedContainerService.HintSize="242,871" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:GetAttribute ContinueOnError="{x:Null}" Result="{x:Null}" Attribute="readystate" DisplayName="Wait Browser" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="GetAttribute_10">
+                    <ui:GetAttribute.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="2f04aaa8-4184-48dc-bcb9-a49b530d1ffe" TimeoutMS="[WaitForReady.COMPLETE]" WaitForReady="COMPLETE" />
+                    </ui:GetAttribute.Target>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:GetAttribute>
+                  <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" CursorMotionType="Instant" DisplayName="Click &quot;Select All&quot;" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="Click_15" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
+                    <ui:Click.CursorPosition>
+                      <ui:CursorPosition Position="Center">
+                        <ui:CursorPosition.OffsetX>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:CursorPosition.OffsetX>
+                        <ui:CursorPosition.OffsetY>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:CursorPosition.OffsetY>
+                      </ui:CursorPosition>
+                    </ui:Click.CursorPosition>
+                    <ui:Click.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="a96d68be-7045-435f-916d-f644a51d5b87" InformativeScreenshot="686b077f35cbd1f1f7c00a528a607b5b" Selector="&lt;webctrl tag='INPUT' type='checkbox' /&gt;" WaitForReady="COMPLETE">
+                        <ui:Target.TimeoutMS>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:Target.TimeoutMS>
+                      </ui:Target>
+                    </ui:Click.Target>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:Click>
+                  <ui:GetAttribute ContinueOnError="{x:Null}" Result="{x:Null}" Attribute="readystate" DisplayName="Wait Browser" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="GetAttribute_11">
+                    <ui:GetAttribute.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="2f04aaa8-4184-48dc-bcb9-a49b530d1ffe" TimeoutMS="[WaitForReady.COMPLETE]" WaitForReady="COMPLETE" />
+                    </ui:GetAttribute.Target>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:GetAttribute>
+                  <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" CursorMotionType="Instant" DisplayName="Click &quot;Archive&quot;" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="Click_16" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
+                    <ui:Click.CursorPosition>
+                      <ui:CursorPosition Position="Center">
+                        <ui:CursorPosition.OffsetX>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:CursorPosition.OffsetX>
+                        <ui:CursorPosition.OffsetY>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:CursorPosition.OffsetY>
+                      </ui:CursorPosition>
+                    </ui:Click.CursorPosition>
+                    <ui:Click.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="a41f0f07-40f5-4138-b4c5-645cab608dd1" InformativeScreenshot="3e65fb1fbceb0a03a83d5d2c5b16a275" Selector="&lt;webctrl aaname='Archivar' parentid='bulkactions-container' tag='A' /&gt;" WaitForReady="COMPLETE">
+                        <ui:Target.TimeoutMS>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:Target.TimeoutMS>
+                      </ui:Target>
+                    </ui:Click.Target>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:Click>
+                  <ui:GetAttribute ContinueOnError="{x:Null}" Attribute="readystate" DisplayName="Wait Browser" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="GetAttribute_12">
+                    <ui:GetAttribute.Result>
+                      <OutArgument x:TypeArguments="x:String">[readystate]</OutArgument>
+                    </ui:GetAttribute.Result>
+                    <ui:GetAttribute.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="2f04aaa8-4184-48dc-bcb9-a49b530d1ffe" TimeoutMS="[WaitForReady.COMPLETE]" WaitForReady="COMPLETE" />
+                    </ui:GetAttribute.Target>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:GetAttribute>
+                  <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" CursorMotionType="Instant" DisplayName="Click &quot;Confirm&quot;" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="Click_17" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
+                    <ui:Click.CursorPosition>
+                      <ui:CursorPosition Position="Center">
+                        <ui:CursorPosition.OffsetX>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:CursorPosition.OffsetX>
+                        <ui:CursorPosition.OffsetY>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:CursorPosition.OffsetY>
+                      </ui:CursorPosition>
+                    </ui:Click.CursorPosition>
+                    <ui:Click.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="088c5a71-a651-4a0f-b3b7-9712edbbcb39" InformativeScreenshot="3a68b677c61af245f02db1d122dda855" Selector="&lt;webctrl aaname='Confirmar' tag='BUTTON' type='button' /&gt;" WaitForReady="COMPLETE">
+                        <ui:Target.TimeoutMS>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:Target.TimeoutMS>
+                      </ui:Target>
+                    </ui:Click.Target>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:Click>
+                  <ui:GetAttribute ContinueOnError="{x:Null}" Attribute="readystate" DisplayName="Wait Browser" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="GetAttribute_13">
+                    <ui:GetAttribute.Result>
+                      <OutArgument x:TypeArguments="x:String">[readystate]</OutArgument>
+                    </ui:GetAttribute.Result>
+                    <ui:GetAttribute.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="2f04aaa8-4184-48dc-bcb9-a49b530d1ffe" TimeoutMS="[WaitForReady.COMPLETE]" WaitForReady="COMPLETE" />
+                    </ui:GetAttribute.Target>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:GetAttribute>
+                  <ui:ImageFound DisplayName="Locate ended Image for close" Found="[EndedImage]" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="ImageFound_6">
+                    <ui:ImageFound.Image>
+                      <ui:ImageTarget Image="{x:Null}" Accuracy="0.8" Profile="Basic" TargetImageBase64="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" />
+                    </ui:ImageFound.Image>
+                    <ui:ImageFound.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="0ca765e4-056c-48a0-b363-6aab5c74e4ff" WaitForReady="COMPLETE">
+                        <ui:Target.TimeoutMS>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:Target.TimeoutMS>
+                      </ui:Target>
+                    </ui:ImageFound.Target>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:ImageFound>
+                  <ui:GetAttribute ContinueOnError="{x:Null}" Result="{x:Null}" Attribute="readystate" DisplayName="Wait Browser" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="GetAttribute_14">
+                    <ui:GetAttribute.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="2f04aaa8-4184-48dc-bcb9-a49b530d1ffe" TimeoutMS="[WaitForReady.COMPLETE]" WaitForReady="COMPLETE" />
+                    </ui:GetAttribute.Target>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:GetAttribute>
+                </Sequence>
+              </ui:InterruptibleDoWhile.Body>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:InterruptibleDoWhile>
+            <ui:GetAttribute ContinueOnError="{x:Null}" Result="{x:Null}" Attribute="readystate" DisplayName="Wait Browser" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="GetAttribute_16">
+              <ui:GetAttribute.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="2f04aaa8-4184-48dc-bcb9-a49b530d1ffe" TimeoutMS="[WaitForReady.COMPLETE]" WaitForReady="COMPLETE" />
+              </ui:GetAttribute.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:GetAttribute>
+          </Sequence>
+        </ActivityAction>
+      </ui:OpenBrowser.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:OpenBrowser>
+    <Sequence DisplayName="End Automatitation" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_12">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ui:GetAttribute ContinueOnError="{x:Null}" Result="{x:Null}" Attribute="readystate" DisplayName="Wait Browser" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="GetAttribute_17">
+        <ui:GetAttribute.Target>
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="2f04aaa8-4184-48dc-bcb9-a49b530d1ffe" TimeoutMS="[WaitForReady.COMPLETE]" WaitForReady="COMPLETE" />
+        </ui:GetAttribute.Target>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:GetAttribute>
+      <ui:CloseApplication DisplayName="Close Browser" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="CloseApplication_2">
+        <ui:CloseApplication.Target>
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="ba89e77b-d29b-4d91-819d-cc51493c2869" InformativeScreenshot="5bd5d3192d1d2564b279d66bf0752790" Selector="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='Tareas · Holded - Google Chrome' /&gt;&lt;ctrl name='Tareas · Holded - Google Chrome - Juan (Ceroone)' role='pane' /&gt;&lt;ctrl name='Google Chrome' role='pane' /&gt;&lt;ctrl name='Cerrar' role='push button' /&gt;">
+            <ui:Target.TimeoutMS>
+              <InArgument x:TypeArguments="x:Int32" />
+            </ui:Target.TimeoutMS>
+            <ui:Target.WaitForReady>
+              <InArgument x:TypeArguments="ui:WaitForReady" />
+            </ui:Target.WaitForReady>
+          </ui:Target>
+        </ui:CloseApplication.Target>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:CloseApplication>
+      <ui:GetAttribute ContinueOnError="{x:Null}" Result="{x:Null}" Attribute="readystate" DisplayName="Wait Browser" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="GetAttribute_18">
+        <ui:GetAttribute.Target>
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="2f04aaa8-4184-48dc-bcb9-a49b530d1ffe" TimeoutMS="[WaitForReady.COMPLETE]" WaitForReady="COMPLETE" />
+        </ui:GetAttribute.Target>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:GetAttribute>
+      <ui:CloseApplication DisplayName="Close Browser" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="CloseApplication_1">
+        <ui:CloseApplication.Target>
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="ba89e77b-d29b-4d91-819d-cc51493c2869" InformativeScreenshot="5bd5d3192d1d2564b279d66bf0752790" Selector="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='Tareas · Holded - Google Chrome' /&gt;&lt;ctrl name='Tareas · Holded - Google Chrome - Juan (Ceroone)' role='pane' /&gt;&lt;ctrl name='Google Chrome' role='pane' /&gt;&lt;ctrl name='Cerrar' role='push button' /&gt;">
+            <ui:Target.TimeoutMS>
+              <InArgument x:TypeArguments="x:Int32" />
+            </ui:Target.TimeoutMS>
+            <ui:Target.WaitForReady>
+              <InArgument x:TypeArguments="ui:WaitForReady" />
+            </ui:Target.WaitForReady>
+          </ui:Target>
+        </ui:CloseApplication.Target>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:CloseApplication>
+      <ui:GetAttribute ContinueOnError="{x:Null}" Result="{x:Null}" Attribute="readystate" DisplayName="Wait Browser" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="GetAttribute_19">
+        <ui:GetAttribute.Target>
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="2f04aaa8-4184-48dc-bcb9-a49b530d1ffe" TimeoutMS="[WaitForReady.COMPLETE]" WaitForReady="COMPLETE" />
+        </ui:GetAttribute.Target>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:GetAttribute>
+      <ui:CloseApplication DisplayName="Close Browser" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="CloseApplication_3">
+        <ui:CloseApplication.Target>
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="ba89e77b-d29b-4d91-819d-cc51493c2869" InformativeScreenshot="5bd5d3192d1d2564b279d66bf0752790" Selector="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='Dashboard · Holded - Google Chrome' /&gt;&lt;ctrl name='Dashboard · Holded - Google Chrome - Juan (Ceroone)' role='pane' /&gt;&lt;ctrl name='Google Chrome' role='pane' /&gt;&lt;ctrl name='Cerrar' role='push button' /&gt;">
+            <ui:Target.TimeoutMS>
+              <InArgument x:TypeArguments="x:Int32" />
+            </ui:Target.TimeoutMS>
+            <ui:Target.WaitForReady>
+              <InArgument x:TypeArguments="ui:WaitForReady" />
+            </ui:Target.WaitForReady>
+          </ui:Target>
+        </ui:CloseApplication.Target>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:CloseApplication>
+      <ui:GetAttribute ContinueOnError="{x:Null}" Result="{x:Null}" Attribute="readystate" DisplayName="Wait Browser" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="GetAttribute_20">
+        <ui:GetAttribute.Target>
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="2f04aaa8-4184-48dc-bcb9-a49b530d1ffe" TimeoutMS="[WaitForReady.COMPLETE]" WaitForReady="COMPLETE" />
+        </ui:GetAttribute.Target>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:GetAttribute>
+      <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Show Indications" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="MessageBox_2" Text="[&quot;El archivado a terminado&quot;]">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:MessageBox>
+    </Sequence>
+  </Sequence>
+</Activity>
